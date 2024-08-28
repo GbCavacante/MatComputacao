@@ -1,0 +1,37 @@
+enum LinguaAnimal {
+    Cachorro = "auau",
+    Gato = "miau",
+    Bebe = "bua",
+    Galo = "cocorico"
+}
+
+function animalSom(opcao: string) {
+    switch (opcao.toLowerCase()) {
+        case LinguaAnimal.Cachorro:
+            console.log("Você escolheu cachorro, que faz: " + LinguaAnimal.Cachorro);
+            break;
+        case LinguaAnimal.Gato:
+            console.log("Você escolheu gato, que faz: " + LinguaAnimal.Gato);
+            break;
+        case LinguaAnimal.Bebe:
+            console.log("Você escolheu bebê, que faz: " + LinguaAnimal.Bebe);
+            break;
+        case LinguaAnimal.Galo:
+            console.log("Você escolheu galo, que faz: " + LinguaAnimal.Galo);
+            break;
+        default:
+            console.log("Som de animal não encontrado.");
+            break;
+    }
+}
+
+// Captura a entrada do usuário
+const readline = require('readline').createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+readline.question("Digite o som do animal (auau, miau, bua, cocorico): ", (opcao: string) => {
+    animalSom(opcao);
+    readline.close();
+});
